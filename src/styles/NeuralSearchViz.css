@@ -1,0 +1,130 @@
+/* src/styles/NeuralSearchViz.css */
+.neural-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.flow-box {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  min-width: 150px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9f9f9;
+  transition: all 0.5s ease;
+}
+
+.flow-box.active {
+  border-color: #f4a261;
+  background-color: #fefae0;
+  transform: scale(1.05);
+}
+
+.arrow {
+  font-size: 2.5rem;
+  color: #ccc;
+  transition: color 0.5s ease;
+}
+.arrow.active {
+  color: #f4a261;
+}
+
+.vector-space-box {
+  width: 300px;
+  height: 200px;
+  position: relative;
+}
+
+.space {
+  width: 100%;
+  height: 100%;
+}
+
+.point {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.doc-point {
+  background-color: #bde0fe;
+  border: 1px solid #5e90b3;
+}
+.doc-point.result {
+  background-color: #2a9d8f;
+  border-color: #264653;
+  color: white;
+  transform: scale(1.2);
+}
+
+.doc-point::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+.doc-point:hover::after {
+  opacity: 1;
+}
+
+.query-point {
+  background-color: #e76f51;
+  color: white;
+}
+
+.results-panel {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.result-box {
+  width: 45%;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 100px;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+.result-box.active {
+  opacity: 1;
+  border-color: #2a9d8f;
+}
+.result-box h4 {
+  margin-top: 0;
+  text-align: center;
+}

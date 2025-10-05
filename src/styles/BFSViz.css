@@ -1,0 +1,74 @@
+/* src/styles/BFSViz.css */
+.bfs-viz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.edge {
+  stroke: #ccc;
+  stroke-width: 2;
+  transition: stroke 0.3s ease;
+}
+
+.edge.highlighted {
+  stroke: #f4a261;
+  stroke-width: 4;
+}
+
+.node {
+  stroke-width: 3;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.node.unvisited {
+  fill: #f9f9f9;
+  stroke: #aaa;
+}
+.node.visiting {
+  fill: #e9c46a;
+  stroke: #f4a261;
+}
+.node.visited {
+  fill: #2a9d8f;
+  stroke: #264653;
+}
+
+.node-text {
+  text-anchor: middle;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  fill: #333;
+}
+.node.visited + .node-text {
+  fill: white;
+}
+
+.queue-display {
+  margin-top: 20px;
+  width: 80%;
+  text-align: center;
+}
+.queue-elements {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.queue-element {
+  width: 30px;
+  height: 30px;
+  background-color: #e9ecef;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

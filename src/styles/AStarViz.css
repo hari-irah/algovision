@@ -1,0 +1,47 @@
+/* src/styles/AStarViz.css */
+.a-star-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.node {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  position: relative;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.node.start { background-color: #2a9d8f; }
+.node.end { background-color: #e76f51; }
+.node.wall { background-color: #264653; }
+.node.open { background-color: #bde0fe; }
+.node.closed { background-color: #ffc8dd; }
+.node.path { background-color: #f4a261; }
+.node.current {
+  background-color: #e9c46a;
+  box-shadow: inset 0 0 5px #264653;
+}
+
+.cost {
+  position: absolute;
+  font-size: 8px;
+  color: #555;
+  pointer-events: none;
+}
+.f-cost { top: 1px; left: 1px; }
+.g-cost { bottom: 1px; left: 1px; }
+.h-cost { bottom: 1px; right: 1px; }
