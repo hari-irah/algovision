@@ -8,7 +8,7 @@ const documents = [
 
 export function runBm25(query) {
   const steps = [];
-  const queryTerms = query.toLowerCase().split(' ');
+  // const queryTerms = query.toLowerCase().split(' '); // This line was removed
 
   // Step 1: Initial State
   steps.push({
